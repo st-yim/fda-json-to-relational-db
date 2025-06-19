@@ -77,7 +77,7 @@ reactions_df = json_normalize(
 )
 ```
 
-### 4. 4. Load into PostgreSQL
+### 4. Load into PostgreSQL
 
 Each relational table is written into the PostgreSQL database:
 
@@ -93,3 +93,12 @@ reactions_df.to_sql("reactions", engine, if_exists="append", index=False)
 ### Result:
 
 This approach results in a scalable, relational schema that reflects the original JSON structure, while making querying more performant and organized. Each record maintains referential integrity via `safetyreportid`.
+
+
+### Future Improvements:
+
+- Automate column extraction and typing
+
+- Batch insert large record sets
+
+- Generalize schema parsing for dynamic API structures
