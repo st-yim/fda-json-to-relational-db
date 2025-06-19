@@ -75,3 +75,21 @@ reactions_df = json_normalize(
     record_path=['patient', 'reaction'],
     meta=['safetyreportid']
 )
+```
+
+### 4. 4. Load into PostgreSQL
+
+Each relational table is written into the PostgreSQL database:
+
+```python
+engine = create_engine("postgresql://postgres:password@localhost:5432/fda_relational")
+
+logistics_df.to_sql("logistics", engine, if_exists="append", index=False)
+patient_df.to_sql("patient", engine, if_exists="append", index=False)
+drugs_df.to_sql("drugs", engine, if_exists="append", index=False)
+reactions_df.to_sql("reactions", engine, if_exists="append", index=False)
+```
+
+### Result:
+
+This approach results in a scalable, relational schema that reflects the original JSON structure, while making querying more performant and organized. Each record maintains referential integrity via `safetyreportid`.
