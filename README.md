@@ -2,7 +2,7 @@
 
 This project transforms deeply nested, non-relational JSON data into a clean set of relational tables suitable for PostgreSQL.
 
-It is designed to help analysts and engineers handle structured medical records or event reporting data — especially when stored in formats that are difficult to query directly.
+This mini project explores how to transform complex health-related JSON data into a relational format. It is intended as a learning exercise or proof of concept, not for production or clinical use.
 
 > **Note**: This project uses *publicly available data* from the [openFDA API](https://api.fda.gov/). The data is de-identified and intended for public use. This project is for demonstration purposes only and should not be used for clinical or regulatory decision-making.
 
